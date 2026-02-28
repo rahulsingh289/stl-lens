@@ -1,0 +1,61 @@
+{
+  "name": "stl-lens",
+  "displayName": "STL Lens",
+  "description": "STL Lens helps C++ developers understand STL containers and algorithms by showing code snippets, examples, and visualizations when hovering over STL keywords.",
+  "version": "0.0.1",
+
+  "engines": {
+    "vscode": "^1.106.0"
+  },
+
+  "categories": [
+    "Other"
+  ],
+
+  "activationEvents": [
+  "onLanguage:cpp",
+  "onCommand:stl-lens.showAll"
+],
+
+  "main": "./out/extension.js",
+
+  "contributes": {
+    "languages": [
+      {
+        "id": "cpp",
+        "extensions": [".cpp", ".h"],
+        "aliases": ["C++", "cpp"]
+      }
+    ],
+    "commands": [
+      {
+        "command": "stl-lens.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "stl-lens.showAll",
+        "title": "STL Lens: Show All STL Examples"
+      }
+    ]
+  },
+
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+
+  "devDependencies": {
+    "@types/vscode": "^1.109.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.56.1",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
