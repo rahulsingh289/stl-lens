@@ -1,71 +1,129 @@
-# stl-lens README
+# STL Lens 🔍
 
-This is the README for your extension "stl-lens". After writing up a brief description, we recommend including the following sections.
+**STL Lens** is a Visual Studio Code extension designed to help C++ developers **learn, understand, and visualize Standard Template Library (STL) containers and algorithms** directly inside their editor.
 
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+Whether you're a beginner learning C++ or preparing for coding interviews, STL Lens makes STL concepts **interactive, visual, and easy to grasp**.
 
 ---
 
-## Following extension guidelines
+## 🚀 Features
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+✨ Hover over STL keywords to see:
+- 📦 Container description
+- ⚙️ Time complexity
+- 🧠 Internal working
+- 🧾 Syntax examples
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+✨ Supports common STL components:
+- `vector`
+- `map`
+- `unordered_map`
+- `set`
+- `stack`
+- `queue`
+- `priority_queue`
+- `deque`
+- `list`
+- STL Algorithms like `sort`, `binary_search`, etc.
 
-## Working with Markdown
+✨ Quick learning while coding — no need to switch tabs!
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+---
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+## 📸 Preview
 
-## For more information
+> (Add screenshots or GIFs here once you publish your extension)
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Example:
 
-**Enjoy!**
+```cpp
+std::vector<int> arr;
+
+
+
+
+
+## Hovering over vector will show:
+
+Definition
+Time Complexity
+Code examples
+Use cases
+
+##🛠️ Installation
+
+From VS Code Marketplace (after publishing)
+Open Extensions in VS Code
+Search for STL Lens
+Click Install
+From VSIX (manual install)
+Download .vsix file
+Open VS Code
+Go to Extensions → ... → Install from VSIX
+Select the file
+
+## 💻 Usage
+Open any C++ file (.cpp, .h)
+Write STL code such as:
+#include <vector>
+using namespace std;
+
+vector<int> v;
+Hover over vector to see STL Lens insights 🎯
+🎯 Who is this for?
+👨‍🎓 Students learning C++
+💻 Competitive programmers
+🧠 Interview preparation (DSA)
+👨‍💼 Developers who want quick STL references
+
+## 🧩 Extension Settings
+Currently, STL Lens works out-of-the-box with zero configuration.
+Future updates will include:
+Custom hover themes
+Enable/disable specific containers
+Complexity display toggle
+
+##🤝 Contributing
+Contributions are welcome! 🎉
+If you’d like to improve STL Lens, follow these steps:
+Fork the repository
+Create a new branch
+git checkout -b feature/your-feature-name
+Make your changes
+Commit your changes
+git commit -m "Added new STL explanation"
+Push to your fork
+git push origin feature/your-feature-name
+Open a Pull Request 🚀
+
+## 🐛 Issues & Feedback
+If you find a bug or want to request a feature:
+Open an issue on GitHub
+Provide a clear description
+Add screenshots if possible
+
+##🗺️ Roadmap
+Upcoming features:
+🔍 STL visual diagrams
+📊 Time complexity comparison charts
+🧪 Practice problems integration
+🎥 Learning mode with mini tutorials
+🤖 AI explanation support
+
+##👨‍💻 Author
+Rahul Singh
+GitHub: https://github.com/rahulsingh289
+
+## 📄 License
+This project is licensed under the MIT License.
+
+##⭐ Support
+If you like this extension, please:
+⭐ Star the repository
+🗣 Share with friends
+💡 Suggest new ideas
+
+
+##🙌 Acknowledgements
+Inspired by C++ STL documentation
+Built for the developer community ❤️
