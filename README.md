@@ -1,20 +1,45 @@
-# STL Lens 🔍
+# 🔍 STL Lens
 
-**STL Lens** is a Visual Studio Code extension designed to help C++ developers **learn, understand, and visualize Standard Template Library (STL) containers and algorithms** directly inside their editor.
+> Learn and understand C++ STL — without leaving your editor.
 
-Whether you're a beginner learning C++ or preparing for coding interviews, STL Lens makes STL concepts **interactive, visual, and easy to grasp**.
+**STL Lens** is a Visual Studio Code extension that helps C++ developers quickly understand and visualize Standard Template Library (STL) containers and algorithms through intelligent hover tooltips.
+
+Perfect for students, competitive programmers, and interview preparation.
 
 ---
 
-## 🚀 Features
+## 🚀 Why STL Lens?
 
-✨ Hover over STL keywords to see:
-- 📦 Container description
-- ⚙️ Time complexity
-- 🧠 Internal working
-- 🧾 Syntax examples
+When learning C++, developers often:
 
-✨ Supports common STL components:
+- Forget time complexities
+- Mix up containers (`map` vs `unordered_map`)
+- Need quick syntax reminders
+- Switch browser tabs repeatedly
+
+**STL Lens solves this directly inside VS Code.**
+
+> Hover. Learn. Continue coding.
+
+---
+
+## ✨ Features
+
+### 🔎 Smart Hover Insights
+
+Hover over STL components to instantly see:
+
+- 📦 What it is  
+- ⚙️ Time complexity  
+- 🧠 Internal working  
+- 💡 When to use it  
+- ⚠️ Common mistakes  
+- 🧾 Syntax examples  
+
+---
+
+## 📚 Supported Containers
+
 - `vector`
 - `map`
 - `unordered_map`
@@ -24,106 +49,133 @@ Whether you're a beginner learning C++ or preparing for coding interviews, STL L
 - `priority_queue`
 - `deque`
 - `list`
-- STL Algorithms like `sort`, `binary_search`, etc.
-
-✨ Quick learning while coding — no need to switch tabs!
 
 ---
 
-## 📸 Preview
+## 🔷 Supported Algorithms
 
-> (Add screenshots or GIFs here once you publish your extension)
+- `sort`
+- `stable_sort`
+- `binary_search`
+- `lower_bound`
+- `upper_bound`
+- `next_permutation`
+- `prev_permutation`
+- `accumulate`
+- `count`
+- `find`
+- `reverse`
+- `min_element`
+- `max_element`
 
-Example:
+Works with both:
 
 ```cpp
-std::vector<int> arr;
+vector<int>
+std::vector<int>
 
 
 
+📸 Preview
+#include <vector>
+using namespace std;
 
-
-## Hovering over vector will show:
-
+vector<int> v = {1, 2, 3};
+Hover over vector and see:
 Definition
-Time Complexity
-Code examples
-Use cases
+Complexity
+Code snippet
+Usage guidance
+No tab switching. No searching.
 
-##🛠️ Installation
 
-From VS Code Marketplace (after publishing)
-Open Extensions in VS Code
+💻 Installation
+From VS Code Marketplace (Recommended)
+Open VS Code
+Go to Extensions (Ctrl + Shift + X)
 Search for STL Lens
 Click Install
-From VSIX (manual install)
-Download .vsix file
+From VSIX (Manual Install)
+Download the .vsix file
 Open VS Code
 Go to Extensions → ... → Install from VSIX
 Select the file
 
-## 💻 Usage
-Open any C++ file (.cpp, .h)
-Write STL code such as:
-#include <vector>
-using namespace std;
 
-vector<int> v;
-Hover over vector to see STL Lens insights 🎯
-🎯 Who is this for?
+🧑‍💻 Usage
+Open any C++ file (.cpp, .h, .hpp)
+Write STL code:
+std::map<int, string> mp;
+std::sort(v.begin(), v.end());
+Hover over the STL keyword
+Instantly see explanation 🎯
+
+
+
+🎯 Who Is This For?
 👨‍🎓 Students learning C++
 💻 Competitive programmers
-🧠 Interview preparation (DSA)
-👨‍💼 Developers who want quick STL references
+🧠 DSA / Interview preparation
+👨‍💼 Developers needing quick STL references
+🚀 Anyone tired of switching tabs
 
-## 🧩 Extension Settings
-Currently, STL Lens works out-of-the-box with zero configuration.
-Future updates will include:
-Custom hover themes
-Enable/disable specific containers
-Complexity display toggle
 
-##🤝 Contributing
-Contributions are welcome! 🎉
-If you’d like to improve STL Lens, follow these steps:
-Fork the repository
-Create a new branch
-git checkout -b feature/your-feature-name
-Make your changes
-Commit your changes
+
+🛠 Extension Settings
+Currently works out-of-the-box with zero configuration.
+Planned customization features:
+🎨 Custom hover themes
+🔘 Enable/disable specific containers
+📊 Complexity display toggle
+📚 Beginner / Advanced explanation modes
+
+
+🗺️ Roadmap
+Upcoming improvements:
+🔥 Interactive STL simulator
+📊 Complexity comparison charts
+🧪 Integrated practice problems
+🎥 Guided learning mode
+🤖 AI-assisted explanations
+
+🤝 Contributing
+Contributions are welcome!
+1.Fork the repository
+2.Create a branch
+git checkout -b feature/your-feature
+3.Make changes
+4.Commit
 git commit -m "Added new STL explanation"
-Push to your fork
-git push origin feature/your-feature-name
-Open a Pull Request 🚀
+5.Push
+git push origin feature/your-feature
+6.Open a Pull Request 🚀
 
-## 🐛 Issues & Feedback
-If you find a bug or want to request a feature:
-Open an issue on GitHub
-Provide a clear description
-Add screenshots if possible
 
-##🗺️ Roadmap
-Upcoming features:
-🔍 STL visual diagrams
-📊 Time complexity comparison charts
-🧪 Practice problems integration
-🎥 Learning mode with mini tutorials
-🤖 AI explanation support
+🐛 Issues & Feedback
+Found a bug?
+Want a feature?
+Open an issue on GitHub with:
+Clear description
+Steps to reproduce
+Screenshots (if possible)
 
-##👨‍💻 Author
+
+
+👨‍💻 Author
 Rahul Singh
 GitHub: https://github.com/rahulsingh289
 
-## 📄 License
-This project is licensed under the MIT License.
 
-##⭐ Support
-If you like this extension, please:
+📄 License
+MIT License
+
+
+⭐ Support
+If you find STL Lens helpful:
 ⭐ Star the repository
-🗣 Share with friends
+🗣 Share with fellow developers
 💡 Suggest new ideas
 
 
-##🙌 Acknowledgements
-Inspired by C++ STL documentation
-Built for the developer community ❤️
+🙌 Acknowledgements
+Inspired by C++ STL documentation and built for the developer community ❤️
