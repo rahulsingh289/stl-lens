@@ -2,14 +2,14 @@
   "name": "stl-lens",
   "displayName": "STL Lens",
   "description": "STL Lens helps C++ developers understand STL containers and algorithms by showing code snippets, examples, and visualizations when hovering over STL keywords.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
   "type": "git",
   "url": "https://github.com/rahulsingh289/stl-lens.git"
 },
 "license": "MIT",
 "publisher": "singhrahul",
-"icon": "icon.png",
+"icon": "images/icon.png",
 
   "engines": {
   "vscode": "^1.109.0"
