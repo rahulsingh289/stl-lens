@@ -7,6 +7,7 @@
   "type": "git",
   "url": "https://github.com/rahulsingh289/stl-lens.git"
 },
+"license": "MIT",
 
   "engines": {
   "vscode": "^1.109.0"
