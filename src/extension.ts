@@ -5,289 +5,286 @@ export function activate(context: vscode.ExtensionContext) {
     console.log("STL Lens is now active!");
 
     // 📚 STL Documentation Dictionary
-    const stlDocs: Record<string, string> = {
+   const stlDocs: Record<string, string> = {
 
-        vector: `🔵 **std::vector**
+vector: `🔵 **std::vector**
 
-A dynamic array that can grow or shrink in size.
+Dynamic array with contiguous memory.
+Allows fast random access and amortized constant-time insertion at the end.
 
-📊 **Time Complexity**
-- Access: O(1)
-- Insert (end): O(1)
-- Insert (middle): O(n)
-
-📦 **Visual**
-[1] → [2] → [3] → [4]
-
+📦 **Header**
 \`\`\`cpp
 #include <vector>
-using namespace std;
+\`\`\`
 
+📊 **Time Complexity**
+• Access (v[i]) → O(1)  
+• push_back() → O(1) amortized  
+• pop_back() → O(1)  
+• insert/erase (middle) → O(n)  
+• size() → O(1)
+
+🧠 **Key Concepts**
+• size() = elements stored  
+• capacity() = allocated memory  
+• Resizes automatically (usually doubles capacity)
+
+📦 **Visual**
+Index: 0   1   2   3  
+Value: [1] [2] [3] [4]
+
+💻 **Example**
+\`\`\`cpp
 vector<int> v = {1,2,3};
 v.push_back(4);
-\`\`\``,
+cout << v[0];  // 1
+\`\`\`
 
-        map: `🟢 **std::map**
+🚀 Use When:
+• Need fast random access  
+• Need dynamic resizing  
 
-Stores key-value pairs in sorted order (Red-Black Tree).
+Avoid when frequent middle insertions (use list).`,
+        
 
-📊 **Time Complexity**
-- Insert: O(log n)
-- Search: O(log n)
+map: `🟢 **std::map**
 
-🌳 **Visual**
-    (2)
-   /   \\
- (1)   (3)
+Ordered key-value container.
+Implemented using a Red-Black Tree.
 
+📦 **Header**
 \`\`\`cpp
 #include <map>
-using namespace std;
+\`\`\`
 
+📊 **Time Complexity**
+• Insert → O(log n)  
+• Search → O(log n)  
+• Erase → O(log n)
+
+🧠 Keys are:
+• Unique  
+• Automatically sorted  
+
+🌳 **Tree Concept**
+Balanced Binary Search Tree
+
+💻 **Example**
+\`\`\`cpp
 map<int,string> m;
 m[1] = "Rahul";
-\`\`\``,
+cout << m[1];
+\`\`\`
 
-        set: `🟣 **std::set**
+🚀 Use When:
+• Need sorted keys  
+• Need fast ordered lookup`,
+
+set: `🟣 **std::set**
 
 Stores unique sorted elements.
+Implemented as Red-Black Tree.
 
-📊 **Time Complexity**
-- Insert: O(log n)
-- Search: O(log n)
-
+📦 **Header**
 \`\`\`cpp
 #include <set>
-using namespace std;
+\`\`\`
 
+📊 **Time Complexity**
+• Insert → O(log n)  
+• Search → O(log n)  
+• Erase → O(log n)
+
+🧠 No duplicate values allowed.
+
+💻 **Example**
+\`\`\`cpp
 set<int> s = {1,2,3};
 s.insert(4);
-\`\`\``,
+\`\`\`
 
-        unordered_map: `⚡ **std::unordered_map**
+🚀 Use When:
+• Need sorted unique elements`,
 
-Hash table based key-value store.
+unordered_map: `⚡ **std::unordered_map**
 
-📊 **Time Complexity**
-- Insert: O(1)
-- Search: O(1)
+Hash table based key-value container.
 
+📦 **Header**
 \`\`\`cpp
 #include <unordered_map>
-using namespace std;
+\`\`\`
 
+📊 **Average Complexity**
+• Insert → O(1)  
+• Search → O(1)  
+• Erase → O(1)
+
+⚠ Worst case → O(n) (hash collisions)
+
+🧠 Keys are:
+• Unique  
+• NOT sorted  
+
+💻 **Example**
+\`\`\`cpp
 unordered_map<int,string> m;
 m[1] = "Rahul";
-\`\`\``,
+\`\`\`
 
-        stack: `📚 **std::stack (LIFO)**
+🚀 Use When:
+• Need fastest lookup  
+• Order doesn't matter`,
 
-Last In First Out structure.
+stack: `📚 **std::stack (LIFO)**
 
-📦 **Visual**
-Top → [4]
-       [3]
-       [2]
-       [1]
+Last In First Out container adapter.
 
+📦 **Header**
 \`\`\`cpp
 #include <stack>
-using namespace std;
-
-stack<int> s;
-s.push(1);
-s.pop();
-\`\`\``,
-
-        queue: `🚶 **std::queue (FIFO)**
-
-First In First Out structure.
-
-📦 **Visual**
-Front → [1][2][3][4] ← Rear
-
-\`\`\`cpp
-#include <queue>
-using namespace std;
-
-queue<int> q;
-q.push(1);
-q.pop();
-\`\`\``,
-
-        priority_queue: `🔥 **std::priority_queue**
-
-Max Heap structure.
+\`\`\`
 
 📊 **Time Complexity**
-- Insert: O(log n)
-- Top: O(1)
+• push → O(1)  
+• pop → O(1)  
+• top → O(1)
 
+📦 **Visual**
+Top
+[4]
+[3]
+[2]
+
+💻 **Example**
+\`\`\`cpp
+stack<int> s;
+s.push(10);
+s.pop();
+\`\`\`
+
+🚀 Use When:
+• Expression evaluation  
+• Undo/Redo  
+• DFS`,
+
+queue: `🚶 **std::queue (FIFO)**
+
+First In First Out container adapter.
+
+📦 **Header**
 \`\`\`cpp
 #include <queue>
-using namespace std;
+\`\`\`
 
+📊 **Time Complexity**
+• push → O(1)  
+• pop → O(1)  
+• front → O(1)
+
+📦 **Visual**
+Front → [1][2][3] ← Rear
+
+💻 **Example**
+\`\`\`cpp
+queue<int> q;
+q.push(5);
+q.pop();
+\`\`\`
+
+🚀 Use When:
+• BFS  
+• Scheduling`,
+
+priority_queue: `🔥 **std::priority_queue**
+
+Heap-based container (Max Heap by default).
+
+📦 **Header**
+\`\`\`cpp
+#include <queue>
+\`\`\`
+
+📊 **Time Complexity**
+• push → O(log n)  
+• pop → O(log n)  
+• top → O(1)
+
+🧠 Largest element stays at top.
+
+💻 **Example**
+\`\`\`cpp
 priority_queue<int> pq;
 pq.push(10);
-\`\`\``,
+pq.push(20);
+cout << pq.top(); // 20
+\`\`\`
 
-        deque: `📦 **std::deque**
+🚀 Use When:
+• Dijkstra  
+• Scheduling by priority`,
+
+deque: `📦 **std::deque**
 
 Double-ended queue.
+Allows insertion/removal from both ends.
 
-📊 **Time Complexity**
-- Insert front/back: O(1)
-
+📦 **Header**
 \`\`\`cpp
 #include <deque>
-using namespace std;
-
-deque<int> dq;
-        dq.push_front(1);
-        dq.push_back(2);
-        \`\`\``,
-
- 
-        // ================= ALGORITHMS =================
-
-        sort: `🔷 **std::sort**
-
-Sorts elements in ascending order.
+\`\`\`
 
 📊 **Time Complexity**
-O(n log n)
+• push_front/back → O(1)  
+• pop_front/back → O(1)  
+• Access → O(1)
 
-🧠 Uses Introsort (Quick + Heap + Insertion)
+💻 **Example**
+\`\`\`cpp
+deque<int> dq;
+dq.push_front(1);
+dq.push_back(2);
+\`\`\`
 
-📦 **Visual**
-Before: [4,1,3,2]
-After:  [1,2,3,4]
+🚀 Use When:
+• Need fast front & back operations`,
 
+// ================= ALGORITHMS =================
+
+sort: `🔷 **std::sort**
+
+Sorts range in ascending order.
+Uses Introsort (Quick + Heap + Insertion).
+
+📦 **Header**
 \`\`\`cpp
 #include <algorithm>
+\`\`\`
+
+📊 Time → O(n log n)
+
+💻 Example:
+\`\`\`cpp
 sort(v.begin(), v.end());
 \`\`\``,
 
-        stable_sort: `🔷 **std::stable_sort**
+binary_search: `🔷 **std::binary_search**
 
-Preserves order of equal elements.
+Searches in sorted range.
 
-📊 Time: O(n log n)
-
+📦 Header:
 \`\`\`cpp
-stable_sort(v.begin(), v.end());
-\`\`\``,
+#include <algorithm>
+\`\`\`
 
-        binary_search: `🔷 **std::binary_search**
+📊 Time → O(log n)
 
-Works only on sorted range.
-
-📊 Time: O(log n)
+⚠ Range must be sorted.
 
 \`\`\`cpp
 bool found = binary_search(v.begin(), v.end(), 5);
-\`\`\``,
-
-        lower_bound: `🔷 **std::lower_bound**
-
-Returns first element ≥ target.
-
-📊 Time: O(log n)
-
-\`\`\`cpp
-auto it = lower_bound(v.begin(), v.end(), 4);
-\`\`\``,
-
-        upper_bound: `🔷 **std::upper_bound**
-
-Returns first element > target.
-
-📊 Time: O(log n)
-
-\`\`\`cpp
-auto it = upper_bound(v.begin(), v.end(), 4);
-\`\`\``,
-
-        next_permutation: `🔷 **std::next_permutation**
-
-Generates next lexicographic permutation.
-
-📊 Time: O(n)
-
-\`\`\`cpp
-next_permutation(v.begin(), v.end());
-\`\`\``,
-
-        prev_permutation: `🔷 **std::prev_permutation**
-
-Generates previous permutation.
-
-📊 Time: O(n)
-
-\`\`\`cpp
-prev_permutation(v.begin(), v.end());
-\`\`\``,
-
-        accumulate: `🔷 **std::accumulate**
-
-Returns sum of elements.
-
-📊 Time: O(n)
-
-\`\`\`cpp
-#include <numeric>
-int sum = accumulate(v.begin(), v.end(), 0);
-\`\`\``,
-
-        count: `🔷 **std::count**
-
-Counts occurrences of a value.
-
-📊 Time: O(n)
-
-\`\`\`cpp
-int c = count(v.begin(), v.end(), 2);
-\`\`\``,
-
-        find: `🔷 **std::find**
-
-Finds first occurrence of value.
-
-📊 Time: O(n)
-
-\`\`\`cpp
-auto it = find(v.begin(), v.end(), 5);
-\`\`\``,
-
-        reverse: `🔷 **std::reverse**
-
-Reverses elements.
-
-📊 Time: O(n)
-
-\`\`\`cpp
-reverse(v.begin(), v.end());
-\`\`\``,
-
-        max_element: `🔷 **std::max_element**
-
-Returns iterator to maximum element.
-
-📊 Time: O(n)
-
-\`\`\`cpp
-auto it = max_element(v.begin(), v.end());
-\`\`\``,
-
-        min_element: `🔷 **std::min_element**
-
-Returns iterator to minimum element.
-
-📊 Time: O(n)
-
-\`\`\`cpp
-auto it = min_element(v.begin(), v.end());
 \`\`\``
+
 
 };
 
